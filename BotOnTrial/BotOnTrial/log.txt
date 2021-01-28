@@ -1,0 +1,72 @@
+Information: 15-Jan-2021 10:58 Entity Framework Core 5.0.0 initialized 'ClassContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None 
+Information: 15-Jan-2021 10:58 Executed DbCommand (323ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal'; 
+Information: 15-Jan-2021 10:58 Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Groups" (
+    "GroupId" INTEGER NOT NULL CONSTRAINT "PK_Groups" PRIMARY KEY AUTOINCREMENT,
+    "GroupName" TEXT NULL,
+    "Description" TEXT NULL,
+    "InviteLink" TEXT NULL
+); 
+Information: 15-Jan-2021 10:58 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Persons" (
+    "PersonId" INTEGER NOT NULL CONSTRAINT "PK_Persons" PRIMARY KEY AUTOINCREMENT,
+    "UserId" INTEGER NOT NULL,
+    "UserName" TEXT NULL,
+    "FullName" TEXT NULL,
+    "NickName" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "DateOfBirth" TEXT NOT NULL,
+    "LastSeen" TEXT NOT NULL,
+    "RegistrationState" TEXT NULL,
+    "SignUpComplete" INTEGER NOT NULL,
+    "GroupId" INTEGER NOT NULL
+); 
+Information: 15-Jan-2021 10:59 Update started successfully 
+Information: 15-Jan-2021 10:59 Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "p"."PersonId", "p"."DateOfBirth", "p"."FullName", "p"."GroupId", "p"."LastSeen", "p"."NickName", "p"."PhoneNumber", "p"."RegistrationState", "p"."SignUpComplete", "p"."UserId", "p"."UserName"
+FROM "Persons" AS "p"
+WHERE "p"."UserName" IS NULL
+LIMIT 1 
+Information: 15-Jan-2021 11:01 Update started successfully 
+Information: 15-Jan-2021 11:01 Executed DbCommand (5ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "p"."PersonId", "p"."DateOfBirth", "p"."FullName", "p"."GroupId", "p"."LastSeen", "p"."NickName", "p"."PhoneNumber", "p"."RegistrationState", "p"."SignUpComplete", "p"."UserId", "p"."UserName"
+FROM "Persons" AS "p"
+WHERE "p"."PersonId" = @__p_0
+LIMIT 1 
+Information: 15-Jan-2021 11:01 Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?', @p6='?', @p7='?' (Size = 13), @p8='?', @p9='?', @p10='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Persons" ("PersonId", "DateOfBirth", "FullName", "GroupId", "LastSeen", "NickName", "PhoneNumber", "RegistrationState", "SignUpComplete", "UserId", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+Information: 15-Jan-2021 11:01 Update started successfully 
+Information: 15-Jan-2021 11:01 Executed DbCommand (2ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?', @p6='?' (Size = 13), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:01 Executed DbCommand (0ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?', @p6='?' (Size = 5), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:02 Update started successfully 
+Information: 15-Jan-2021 11:02 Executed DbCommand (0ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?' (Size = 13), @p6='?' (Size = 5), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:02 Executed DbCommand (0ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?' (Size = 13), @p6='?' (Size = 11), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:02 Update started successfully 
+Information: 15-Jan-2021 11:02 Executed DbCommand (0ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?' (Size = 13), @p6='?' (Size = 11), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:02 Executed DbCommand (0ms) [Parameters=[@p10='?', @p0='?', @p1='?' (Size = 2), @p2='?', @p3='?', @p4='?' (Size = 7), @p5='?' (Size = 13), @p6='?' (Size = 14), @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Persons" SET "DateOfBirth" = @p0, "FullName" = @p1, "GroupId" = @p2, "LastSeen" = @p3, "NickName" = @p4, "PhoneNumber" = @p5, "RegistrationState" = @p6, "SignUpComplete" = @p7, "UserId" = @p8, "UserName" = @p9
+WHERE "PersonId" = @p10;
+SELECT changes(); 
+Information: 15-Jan-2021 11:02 Update started successfully 
+Information: 15-Jan-2021 11:02 Update started successfully 
+Information: 15-Jan-2021 11:03 Update started successfully 
+Information: 15-Jan-2021 11:03 Update started successfully 
+Information: 15-Jan-2021 11:03 Update started successfully 
+Information: 15-Jan-2021 11:03 Update started successfully 
