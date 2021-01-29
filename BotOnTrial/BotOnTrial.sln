@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotOnTrial", "BotOnTrial\Bo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Core", "Bot.Core\Bot.Core.csproj", "{5884F791-600C-4D98-BECF-CF367A19A07D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Data", "Bot.Data\Bot.Data.csproj", "{BE2BC896-6F60-496F-B5BD-34BBAC83C71E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cored", "..\Fabric\Source\Cored\Cored.csproj", "{BB6C77E2-59DA-473D-B50C-83BE3F3349AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Data", "Bot.Data\Bot.Data.csproj", "{BE2BC896-6F60-496F-B5BD-34BBAC83C71E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{BE2BC896-6F60-496F-B5BD-34BBAC83C71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE2BC896-6F60-496F-B5BD-34BBAC83C71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE2BC896-6F60-496F-B5BD-34BBAC83C71E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB6C77E2-59DA-473D-B50C-83BE3F3349AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB6C77E2-59DA-473D-B50C-83BE3F3349AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB6C77E2-59DA-473D-B50C-83BE3F3349AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB6C77E2-59DA-473D-B50C-83BE3F3349AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
